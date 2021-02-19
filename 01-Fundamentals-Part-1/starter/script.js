@@ -38,31 +38,46 @@
 
 
 // 4.
-let year = 2021;
-const ageSomeone = year - 1996;
-const ageSomeoneElse = year - 2010;
-console.log(ageSomeone, ageSomeoneElse);
-console.log(ageSomeoneElse * 2, ageSomeone * 2);
-console.log(2 ** 3); // 2 to the power of 3 (2 * 2 * 2)
+// let year = 2021;
+// const ageSomeone = year - 1996;
+// const ageSomeoneElse = year - 2010;
+// console.log(ageSomeone, ageSomeoneElse);
+// console.log(ageSomeoneElse * 2, ageSomeone * 2);
+// console.log(2 ** 3); // 2 to the power of 3 (2 * 2 * 2)
 
-// we can use the + operator to combine/concatenate strings
-const firstName = "Jonas";
-const lastName = "Schmedtmann";
-console.log(firstName + " " + lastName);
+// // we can use the + operator to combine/concatenate strings
+// const firstName = "Jonas";
+// const lastName = "Schmedtmann";
+// console.log(firstName + " " + lastName);
 
-// Assignment operators
-let x = 10 + 5; // x = 15;
-console.log("X equals: ", x);
-x += 10 // x = x + 10 (x now === 25)
-console.log("X equals: ", x);
-x *= 4;
-console.log("X equals: ", x);
-x++;
-console.log("X equals: ", x);
-x--;
-console.log("X equals: ", x);
+// // Assignment operators
+// let x = 10 + 5; // x = 15;
+// console.log("X equals: ", x);
+// x += 10 // x = x + 10 (x now === 25)
+// console.log("X equals: ", x);
+// x *= 4;
+// console.log("X equals: ", x);
+// x++;
+// console.log("X equals: ", x);
+// x--;
+// console.log("X equals: ", x);
 
 
-// Comparison operators
-console.log(ageSomeone > ageSomeoneElse); // true
-const isFullAge = ageSomeone > 18;
+// // Comparison operators
+// console.log(ageSomeone > ageSomeoneElse); // true
+// const isFullAge = ageSomeone > 18;
+
+
+
+
+
+// Operator Precedence
+const now = 2021;
+
+const ageKaleb = 23;
+const ageMom = 50;
+
+console.log(now - 1997 > now - 1998)
+console.log(ageKaleb, ageMom);
+
+const averageAge = (ageKaleb + ageMom) / 2;
