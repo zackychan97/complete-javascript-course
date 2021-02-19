@@ -71,13 +71,74 @@
 
 
 
-// Operator Precedence
-const now = 2021;
+// // Operator Precedence
+// const now = 2021;
 
-const ageKaleb = 23;
-const ageMom = 50;
+// const ageKaleb = 23;
+// const ageMom = 50;
 
-console.log(now - 1997 > now - 1998)
-console.log(ageKaleb, ageMom);
+// console.log(now - 1997 > now - 1998)
+// console.log(ageKaleb, ageMom);
 
-const averageAge = (ageKaleb + ageMom) / 2;
+// const averageAge = (ageKaleb + ageMom) / 2;
+
+
+
+
+
+
+
+// Template Literals
+
+// const firstName = 'Jonas';
+// const job = 'teacher';
+// const birthYear = 1991;
+// const year = 2037;
+
+// // Old way
+// const jonas = "I'm " + firstName + ', a ' + (year - birthYear) + 'years old ' + job + '!'
+
+// // ES6 Template Literal Way
+// const jonasNew = `I'm ${firstName}, a ${year - birthYear} years old ${job}!`;
+
+// console.log(jonasNew);
+
+// // Multi Line String Pre ES6
+// console.log('String with \n\
+// multiple \n\
+// lines');
+
+// // Multi Line with ES6
+// console.log(`String
+// multiple
+// lines`);
+
+
+
+
+
+// Taking Decisions: If / else Statements
+
+const age = 15;
+const isOldEnough = age >= 18;
+
+if(isOldEnough){
+    console.log(`Sarah can start driving license 🚘`);
+} else {
+    const yearsLeft = 18 - age;
+    console.log(`Sarah cannot start her driving license 🚫.
+She must wait another ${yearsLeft} years.`)
+}
+
+
+
+
+const birthYear = 1991;
+let century;
+if(birthYear <= 2000){
+    century = 20;
+
+} else {
+    century = 21;
+}
+console.log(century);
