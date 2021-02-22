@@ -119,26 +119,26 @@
 
 // Taking Decisions: If / else Statements
 
-const age = 15;
-const isOldEnough = age >= 18;
+// const age = 15;
+// const isOldEnough = age >= 18;
 
-if(isOldEnough){
-    console.log(`Sarah can start driving license 🚘`);
-} else {
-    const yearsLeft = 18 - age;
-    console.log(`Sarah cannot start her driving license 🚫.
-She must wait another ${yearsLeft} years.`)
-}
-
-
+// if(isOldEnough){
+//     console.log(`Sarah can start driving license 🚘`);
+// } else {
+//     const yearsLeft = 18 - age;
+//     console.log(`Sarah cannot start her driving license 🚫.
+// She must wait another ${yearsLeft} years.`)
+// }
 
 
-const birthYear = 1991;
-let century;
-if(birthYear <= 2000){
-    century = 20;
 
-} else {
-    century = 21;
-}
-console.log(century);
+
+// const birthYear = 1991;
+// let century;
+// if(birthYear <= 2000){
+//     century = 20;
+
+// } else {
+//     century = 21;
+// }
+// console.log(century);
