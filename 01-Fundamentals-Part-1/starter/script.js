@@ -173,29 +173,77 @@
 // Truthy and Falsy Values
 // JS has 5 falsy values when converted to boolean: 0, '' (empty string), undefined, null, NaN
 
-console.log(Boolean(0));
-console.log(Boolean(''));
-console.log(Boolean(undefined));
-console.log(Boolean(null));
-console.log(Boolean(NaN));
+// console.log(Boolean(0));
+// console.log(Boolean(''));
+// console.log(Boolean(undefined));
+// console.log(Boolean(null));
+// console.log(Boolean(NaN));
 
-// Everything else is truthy
-console.log(Boolean('Jonas'));
-console.log(Boolean(1));
+// // Everything else is truthy
+// console.log(Boolean('Jonas'));
+// console.log(Boolean(1));
 
 
-const money = 0;
-if(money){
-    console.log("Don't spend it all");
-} else {
-    console.log("You should get a job!");
+// const money = 0;
+// if(money){
+//     console.log("Don't spend it all");
+// } else {
+//     console.log("You should get a job!");
+// }
+
+
+// let height;
+// if(height){
+//     console.log('Height is defined');
+// } else {
+//     console.log('Height is UNDEFINED');
+// }
+
+
+
+
+
+// Equality Operators: == vs ===
+// === does NOT perform type coercion
+// using === is best practice
+const age = 18;
+if (age === 18) {
+    console.log(`Age is: ${age}`);
+}
+
+// == does perform type coercion
+const newAge = '18';
+if (newAge == 18) {
+    console.log(`newAge is: ${newAge}`);
+}
+
+console.log(age == newAge);
+
+// we can get a value from the user
+const favorite = Number(prompt("What's your favorite number?"));
+console.log(favorite);
+
+// loose (does type coercion)
+if (favorite == 7){
+    console.log("7 is a good number")
+}
+// no type coercion (strict)
+if (favorite === 7) {
+    console.log("=== 7")
 }
 
 
-let height;
-if(height){
-    console.log('Height is defined');
+// else if
+if (favorite === 23) {
+    console.log("23 is a good number")
+} else if (favorite === 7) {
+    console.log("7 is a good number")
 } else {
-    console.log('Height is UNDEFINED');
+    console.log("Number is not 7 or 23")
 }
 
+// how to see if something is not equal to something
+// we can see if something is different from another
+if (favorite !== 23) {
+    console.log("Why not 23?")
+}
