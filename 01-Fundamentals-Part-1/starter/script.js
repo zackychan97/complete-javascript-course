@@ -288,3 +288,51 @@
 // } else {
 //     console.log("Someone else should drive");
 // }
+
+
+
+
+
+
+// The Switch Statement
+const day = 'saturday';
+
+switch (day) {
+    case 'monday':
+        console.log(`Today is Monday.`);
+        console.log(`You have class today!`);
+        break;
+    case 'tuesday':
+        console.log(`Today is Tuesday`);
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log(`Today is either Wednesday or Thursday`);
+        break;
+    case 'friday':
+        console.log(`Today is Friday`);
+        break;
+    case 'saturday':
+    case 'sunday':
+        console.log(`its the weekend`);
+        break;
+    default:
+        console.log(`not a valid input`);
+        break;
+}
+
+
+if (day === 'monday'){
+    console.log(`Today is Monday.`);
+    console.log(`You have class today!`);
+} else if (day === 'tuesday'){
+    console.log(`Today is Tuesday`);
+} else if (day === 'wednesday' || day === 'thursday'){
+    console.log(`Today is either Wednesday or Thursday`);
+} else if (day === 'friday'){
+    console.log(`Today is Friday`);
+} else if (day === 'saturday' || day === 'sunday'){
+    console.log(`its the weekend`);
+} else {
+    console.log(`not a valid input`);
+}
