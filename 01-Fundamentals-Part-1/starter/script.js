@@ -295,44 +295,88 @@
 
 
 // The Switch Statement
-const day = 'saturday';
+// const day = 'saturday';
 
-switch (day) {
-    case 'monday':
-        console.log(`Today is Monday.`);
-        console.log(`You have class today!`);
-        break;
-    case 'tuesday':
-        console.log(`Today is Tuesday`);
-        break;
-    case 'wednesday':
-    case 'thursday':
-        console.log(`Today is either Wednesday or Thursday`);
-        break;
-    case 'friday':
-        console.log(`Today is Friday`);
-        break;
-    case 'saturday':
-    case 'sunday':
-        console.log(`its the weekend`);
-        break;
-    default:
-        console.log(`not a valid input`);
-        break;
-}
+// switch (day) {
+//     case 'monday':
+//         console.log(`Today is Monday.`);
+//         console.log(`You have class today!`);
+//         break;
+//     case 'tuesday':
+//         console.log(`Today is Tuesday`);
+//         break;
+//     case 'wednesday':
+//     case 'thursday':
+//         console.log(`Today is either Wednesday or Thursday`);
+//         break;
+//     case 'friday':
+//         console.log(`Today is Friday`);
+//         break;
+//     case 'saturday':
+//     case 'sunday':
+//         console.log(`its the weekend`);
+//         break;
+//     default:
+//         console.log(`not a valid input`);
+//         break;
+// }
 
 
-if (day === 'monday'){
-    console.log(`Today is Monday.`);
-    console.log(`You have class today!`);
-} else if (day === 'tuesday'){
-    console.log(`Today is Tuesday`);
-} else if (day === 'wednesday' || day === 'thursday'){
-    console.log(`Today is either Wednesday or Thursday`);
-} else if (day === 'friday'){
-    console.log(`Today is Friday`);
-} else if (day === 'saturday' || day === 'sunday'){
-    console.log(`its the weekend`);
+// if (day === 'monday'){
+//     console.log(`Today is Monday.`);
+//     console.log(`You have class today!`);
+// } else if (day === 'tuesday'){
+//     console.log(`Today is Tuesday`);
+// } else if (day === 'wednesday' || day === 'thursday'){
+//     console.log(`Today is either Wednesday or Thursday`);
+// } else if (day === 'friday'){
+//     console.log(`Today is Friday`);
+// } else if (day === 'saturday' || day === 'sunday'){
+//     console.log(`its the weekend`);
+// } else {
+//     console.log(`not a valid input`);
+// }
+
+
+
+
+
+
+// Statements and Expressions (and differences between the two)
+// An expression is a piece of code that produces a VALUE
+// 3 + 4, 1991, true && false && !false are all EXPRESSIONS
+
+
+// A statement is like a bigger piece of code that is execute and does not produce a value on itself
+// expressions can be part of a statement, however, the statement isn't itself returning a value.
+
+// This is an if statement that uses an expression to logically decide if the computer should execute the code/statement
+// if(23>10){
+//     const str = '23 is bigger';
+// }
+
+
+
+
+
+
+//  The Conditional (Ternary) Operator
+// similar to an if else statement in one line
+const age = 23;
+// read as: if age >= 18 'I like to drink beer 🍺' else 'I like to drink water 💧'
+age >= 18 ? console.log(`I like to drink beer 🍺`) : console.log(`I like to drink water 💧`);
+
+// an operator produces a value (an operator is therefor an expression)
+
+const drink = age >= 18 ? 'beer 🍺' : 'water 💧';
+console.log(drink); 
+
+let drink2;
+if (age >= 18){
+    drink2 = 'beer 🍺';
 } else {
-    console.log(`not a valid input`);
+    drink2 = 'water 💧';
 }
+console.log(drink2);
+
+console.log(`I like to drink ${age >= 18 ? 'beer 🍺' : 'water 💧'}`)
