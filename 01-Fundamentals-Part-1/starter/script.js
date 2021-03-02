@@ -206,44 +206,85 @@
 // Equality Operators: == vs ===
 // === does NOT perform type coercion
 // using === is best practice
-const age = 18;
-if (age === 18) {
-    console.log(`Age is: ${age}`);
-}
 
-// == does perform type coercion
-const newAge = '18';
-if (newAge == 18) {
-    console.log(`newAge is: ${newAge}`);
-}
+// const age = 18;
+// if (age === 18) {
+//     console.log(`Age is: ${age}`);
+// }
 
-console.log(age == newAge);
+// // == does perform type coercion
+// const newAge = '18';
+// if (newAge == 18) {
+//     console.log(`newAge is: ${newAge}`);
+// }
 
-// we can get a value from the user
-const favorite = Number(prompt("What's your favorite number?"));
-console.log(favorite);
+// console.log(age == newAge);
 
-// loose (does type coercion)
-if (favorite == 7){
-    console.log("7 is a good number")
-}
-// no type coercion (strict)
-if (favorite === 7) {
-    console.log("=== 7")
-}
+// // we can get a value from the user
+// const favorite = Number(prompt("What's your favorite number?"));
+// console.log(favorite);
+
+// // loose (does type coercion)
+// if (favorite == 7){
+//     console.log("7 is a good number")
+// }
+// // no type coercion (strict)
+// if (favorite === 7) {
+//     console.log("=== 7")
+// }
 
 
-// else if
-if (favorite === 23) {
-    console.log("23 is a good number")
-} else if (favorite === 7) {
-    console.log("7 is a good number")
+// // else if
+// if (favorite === 23) {
+//     console.log("23 is a good number")
+// } else if (favorite === 7) {
+//     console.log("7 is a good number")
+// } else {
+//     console.log("Number is not 7 or 23")
+// }
+
+// // how to see if something is not equal to something
+// // we can see if something is different from another
+// if (favorite !== 23) {
+//     console.log("Why not 23?")
+// }
+
+
+
+
+// Boolean Logic
+// And, Or, and Not Operators (These are only some of the boolean logic operators)
+
+
+// Logical Operators
+
+const hasDriversLicense = true;
+const hasGoodVision = true;
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(!hasDriversLicense);
+
+const newHasDriversLicense = true;
+const newHasGoodVision = false;
+
+console.log(hasDriversLicense || hasGoodVision);
+
+// const shouldDrive = hasDriversLicense && hasGoodVision;
+
+// if (shouldDrive){
+//     console.log("Person should drive");
+// } else {
+//     console.log("Someone else should drive");
+// }
+
+const isTired = true;
+
+console.log(hasDriversLicense || hasGoodVision || isTired);
+
+const shouldDrive = hasDriversLicense && hasGoodVision && !isTired;
+
+if (shouldDrive){
+    console.log("Person should drive");
 } else {
-    console.log("Number is not 7 or 23")
-}
-
-// how to see if something is not equal to something
-// we can see if something is different from another
-if (favorite !== 23) {
-    console.log("Why not 23?")
+    console.log("Someone else should drive");
 }
