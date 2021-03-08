@@ -19,27 +19,55 @@
 
 
 // Functions
-function helloWorld(){
-    console.log("Hello World from inside the function");
+// function helloWorld(){
+//     console.log("Hello World from inside the function");
+// }
+// helloWorld(); // invoking, calling, running the function. All mean the same thing
+
+
+// function logger(inputString){
+//     console.log(inputString);
+// }
+
+// logger("Logging with an argument input into function call");
+// logger("Logging with a new arg!!!!!");
+
+// function fruitProcessor(apples, oranges){
+//     console.log(apples, oranges);
+//     const juice = `Juice with ${apples} apples and ${oranges} oranges. 🥤`;
+//     return juice; // we will return the juice data/info/value
+// }
+
+// const appleJuice = fruitProcessor(5, 0); // the juice was returned here, but we can't really access it unless we store it into a variable
+// console.log(appleJuice); // now we can see our string we returned from the fruitProcessor function
+
+// const orangeJuice = fruitProcessor(0, 4); 
+// console.log(orangeJuice);
+
+
+
+
+
+
+
+// Function Declarations vs Expressions
+// Declaration below
+function calcAgeDeclaration(birthYear){
+    // const age = 2037 - birthYear;
+    // return age;
+    // or...
+    return 2037 - birthYear;
 }
-helloWorld(); // invoking, calling, running the function. All mean the same thing
+
+const age1 = calcAgeDeclaration(1997);
+console.log(age1);
 
 
-function logger(inputString){
-    console.log(inputString);
+// function expression below
+// also called anonymous function (bc no function name)
+const calcAgeExpression = function (birthYear) {
+    return 2037 - birthYear;
 }
+const age2 = calcAgeExpression(1997);
 
-logger("Logging with an argument input into function call");
-logger("Logging with a new arg!!!!!");
-
-function fruitProcessor(apples, oranges){
-    console.log(apples, oranges);
-    const juice = `Juice with ${apples} apples and ${oranges} oranges. 🥤`;
-    return juice; // we will return the juice data/info/value
-}
-
-const appleJuice = fruitProcessor(5, 0); // the juice was returned here, but we can't really access it unless we store it into a variable
-console.log(appleJuice); // now we can see our string we returned from the fruitProcessor function
-
-const orangeJuice = fruitProcessor(0, 4); 
-console.log(orangeJuice);
+console.log(age1, age2);
