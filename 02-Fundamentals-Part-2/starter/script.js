@@ -78,30 +78,52 @@
 
 
 
-// Arrow Functions
+// // Arrow Functions
 
-// Function Expression below
-const calcAgeExpression = function (birthYear) {
-    return 2037 - birthYear;
+// // Function Expression below
+// const calcAgeExpression = function (birthYear) {
+//     return 2037 - birthYear;
+// }
+
+// // Arrow Function below (doesn't need to be assigned to variable)
+// const calcAgeArrow = birthYear => 2037 - birthYear;
+// const ageArrowFunction = calcAgeArrow(1997);
+// console.log(ageArrowFunction);
+
+// const yearsUntilRetirement = birthYear => {
+//     const age = 2021 - birthYear;
+//     const retirement = 65 - age;
+//     return `${retirement} years left`;
+// }
+
+// console.log(yearsUntilRetirement(1991));
+
+
+// const fruitBlender = (apples, oranges) => {
+//     const juice = `Juice with ${apples} apples and ${oranges} oranges. 🥤`;
+//     return juice; // we will return the juice data/info/value
+// }
+
+// console.log(fruitBlender(5, 4));
+
+
+
+
+
+
+
+// Functions Calling Other Functions
+
+function cutFruitPieces(fruit){
+    return fruit * 4;
 }
 
-// Arrow Function below (doesn't need to be assigned to variable)
-const calcAgeArrow = birthYear => 2037 - birthYear;
-const ageArrowFunction = calcAgeArrow(1997);
-console.log(ageArrowFunction);
+function fruitProcessor(apples, oranges){
+    console.log(apples, oranges);
+    const applePieces = cutFruitPieces(apples);
+    const orangePieces = cutFruitPieces(oranges);
 
-const yearsUntilRetirement = birthYear => {
-    const age = 2021 - birthYear;
-    const retirement = 65 - age;
-    return `${retirement} years left`;
-}
-
-console.log(yearsUntilRetirement(1991));
-
-
-const fruitBlender = (apples, oranges) => {
-    const juice = `Juice with ${apples} apples and ${oranges} oranges. 🥤`;
+    const juice = `Juice with ${applePieces} apple pieces and ${orangePieces} orange pieces. 🥤`;
     return juice; // we will return the juice data/info/value
 }
-
-console.log(fruitBlender(5, 4));
+console.log(fruitProcessor(3, 2));
