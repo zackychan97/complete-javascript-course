@@ -362,21 +362,21 @@
 
 //  The Conditional (Ternary) Operator
 // similar to an if else statement in one line
-const age = 23;
-// read as: if age >= 18 'I like to drink beer 🍺' else 'I like to drink water 💧'
-age >= 18 ? console.log(`I like to drink beer 🍺`) : console.log(`I like to drink water 💧`);
+// const age = 23;
+// // read as: if age >= 18 'I like to drink beer 🍺' else 'I like to drink water 💧'
+// age >= 18 ? console.log(`I like to drink beer 🍺`) : console.log(`I like to drink water 💧`);
 
-// an operator produces a value (an operator is therefor an expression)
+// // an operator produces a value (an operator is therefor an expression)
 
-const drink = age >= 18 ? 'beer 🍺' : 'water 💧';
-console.log(drink); 
+// const drink = age >= 18 ? 'beer 🍺' : 'water 💧';
+// console.log(drink); 
 
-let drink2;
-if (age >= 18){
-    drink2 = 'beer 🍺';
-} else {
-    drink2 = 'water 💧';
-}
-console.log(drink2);
+// let drink2;
+// if (age >= 18){
+//     drink2 = 'beer 🍺';
+// } else {
+//     drink2 = 'water 💧';
+// }
+// console.log(drink2);
 
-console.log(`I like to drink ${age >= 18 ? 'beer 🍺' : 'water 💧'}`)
+// console.log(`I like to drink ${age >= 18 ? 'beer 🍺' : 'water 💧'}`)
