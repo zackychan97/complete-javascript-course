@@ -114,16 +114,42 @@
 
 // Functions Calling Other Functions
 
-function cutFruitPieces(fruit){
-    return fruit * 4;
+// function cutFruitPieces(fruit){
+//     return fruit * 4;
+// }
+
+// function fruitProcessor(apples, oranges){
+//     console.log(apples, oranges);
+//     const applePieces = cutFruitPieces(apples);
+//     const orangePieces = cutFruitPieces(oranges);
+
+//     const juice = `Juice with ${applePieces} apple pieces and ${orangePieces} orange pieces. 🥤`;
+//     return juice; // we will return the juice data/info/value
+// }
+// console.log(fruitProcessor(3, 2));
+
+
+
+
+
+// Reviewing Functions
+
+const calcAge = function(birthYear){
+    return 2021 - birthYear;
 }
 
-function fruitProcessor(apples, oranges){
-    console.log(apples, oranges);
-    const applePieces = cutFruitPieces(apples);
-    const orangePieces = cutFruitPieces(oranges);
+const yearsUntilRetirement = function (birthYear, firstName){
+    const age = calcAge(birthYear)
+    const retirement = 65 - age;
 
-    const juice = `Juice with ${applePieces} apple pieces and ${orangePieces} orange pieces. 🥤`;
-    return juice; // we will return the juice data/info/value
-}
-console.log(fruitProcessor(3, 2));
+    if (retirement > 0){
+        console.log(`${firstName} has ${retirement} years left`);
+        return retirement;
+    } else {
+        console.log(`${firstName} has already retired!`);
+        return -1;
+    }
+    }
+
+    console.log(yearsUntilRetirement(1997, 'Zack'));
+    console.log(yearsUntilRetirement(1950, 'Mike'));
