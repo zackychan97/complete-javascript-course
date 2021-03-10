@@ -161,28 +161,45 @@
 
 
 
-    const calcAverage = (score1, score2, score3) => {
-        const average = (score1 + score2 + score3) / 3;
-        return average;
-    }
-    
-    const dolphinScore = calcAverage(44, 23, 71);
-    const koalaScore = calcAverage(65, 54, 49);
+// Introduction to Arrays
 
-    const dolphinScore2 = calcAverage(85, 54, 41);
-    const koalaScore2 = calcAverage(23, 34, 27);
+const friend1 = "Michael";
+const friend2 = 'Steven';
+const friend3 = 'Peter';
 
-    const checkWinner = function(team1, team2, team1Name, team2Name){
-        if (team1 >= (team2 * 2)){
-            console.log(`${team1Name} wins averaging ${team1} vs ${team2}!!`);
-        } else if (team2 >= (team1 * 2)){
-            console.log(`${team2Name} wins averaging ${team2} vs ${team1}!!`)
-        } else {
-            console.log(`Either a draw or error.`)
-        }
-    }
-    
-    
-    checkWinner(dolphinScore, koalaScore, 'Dolphins', 'Koalas');
-    checkWinner(dolphinScore2, koalaScore2, 'Dolphins', 'Koalas');
+
+const friends = ['Michael', 'Steven', 'Peter'];
+console.log(friends);
+
+const years = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]); 
+console.log(friends.length); //.length is a property of arrays
+console.log(friends.length - 1) // returns last element of an array
+
+friends[2] = 'Jay';
+console.log(friends);
+
+const jonas = ['Jonas', 'Schmedtmann', 2021 - 1991];
+
+const firstName = 'Jonas';
+const jonas2 = [firstName, 'Schmedtmann', 2021 - 1991, 'teacher', friends];
+
+console.log(jonas);
+console.log(jonas2);
+
+// Exercise
+const calcAge = function(birthYear){
+    return (2021 - birthYear);
+}
+const yearsArray = [1990, 1967, 2002, 2010, 2018];
+
+const age1 = calcAge(yearsArray[0]);
+const age2 = calcAge(yearsArray[1]);
+const age3 = calcAge(yearsArray[2]);
+
+console.log(age1, age2, age3);
+
+const ages = [calcAge(yearsArray[0]), calcAge(yearsArray[1]), calcAge(yearsArray[2]), calcAge(yearsArray[3])];
+console.log(ages);
 
