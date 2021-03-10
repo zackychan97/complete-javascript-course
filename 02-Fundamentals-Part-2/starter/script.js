@@ -163,43 +163,84 @@
 
 // Introduction to Arrays
 
-const friend1 = "Michael";
-const friend2 = 'Steven';
-const friend3 = 'Peter';
+// const friend1 = "Michael";
+// const friend2 = 'Steven';
+// const friend3 = 'Peter';
 
 
+// const friends = ['Michael', 'Steven', 'Peter'];
+// console.log(friends);
+
+// const years = new Array(1991, 1984, 2008, 2020);
+
+// console.log(friends[0]); 
+// console.log(friends.length); //.length is a property of arrays
+// console.log(friends.length - 1) // returns last element of an array
+
+// friends[2] = 'Jay';
+// console.log(friends);
+
+// const jonas = ['Jonas', 'Schmedtmann', 2021 - 1991];
+
+// const firstName = 'Jonas';
+// const jonas2 = [firstName, 'Schmedtmann', 2021 - 1991, 'teacher', friends];
+
+// console.log(jonas);
+// console.log(jonas2);
+
+// // Exercise
+// const calcAge = function(birthYear){
+//     return (2021 - birthYear);
+// }
+// const yearsArray = [1990, 1967, 2002, 2010, 2018];
+
+// const age1 = calcAge(yearsArray[0]);
+// const age2 = calcAge(yearsArray[1]);
+// const age3 = calcAge(yearsArray[2]);
+
+// console.log(age1, age2, age3);
+
+// const ages = [calcAge(yearsArray[0]), calcAge(yearsArray[1]), calcAge(yearsArray[2]), calcAge(yearsArray[3])];
+// console.log(ages);
+
+
+
+
+
+
+
+
+// Basic Array Operations (Methods)
+
+// Add to end of array
 const friends = ['Michael', 'Steven', 'Peter'];
+friends.push("Jay");
+console.log(friends);
+const newLength = friends.push("Dion"); // will store the length of new array
+console.log(newLength);
+
+// Add to beginning of array
+friends.unshift('John');
 console.log(friends);
 
-const years = new Array(1991, 1984, 2008, 2020);
-
-console.log(friends[0]); 
-console.log(friends.length); //.length is a property of arrays
-console.log(friends.length - 1) // returns last element of an array
-
-friends[2] = 'Jay';
+// Remove from the end of an array
+friends.pop(); // no arguments into function, just deletes last element of array
+console.log(friends);
+const popped = friends.pop();
+console.log(popped);
 console.log(friends);
 
-const jonas = ['Jonas', 'Schmedtmann', 2021 - 1991];
+// Remove from the beginning of an array
+friends.shift();
+console.log(friends);
+const shifted = friends.shift();
+console.log(shifted);
+console.log(friends);
 
-const firstName = 'Jonas';
-const jonas2 = [firstName, 'Schmedtmann', 2021 - 1991, 'teacher', friends];
 
-console.log(jonas);
-console.log(jonas2);
+// Finding a specific index by Specific search
+console.log(friends.indexOf('Steven')); // tells us the index number of 'Steven' in our friends array
 
-// Exercise
-const calcAge = function(birthYear){
-    return (2021 - birthYear);
-}
-const yearsArray = [1990, 1967, 2002, 2010, 2018];
 
-const age1 = calcAge(yearsArray[0]);
-const age2 = calcAge(yearsArray[1]);
-const age3 = calcAge(yearsArray[2]);
-
-console.log(age1, age2, age3);
-
-const ages = [calcAge(yearsArray[0]), calcAge(yearsArray[1]), calcAge(yearsArray[2]), calcAge(yearsArray[3])];
-console.log(ages);
-
+// Seeing if a value/element is found anywhere at all in an array
+console.log(friends.includes('Steven'));
