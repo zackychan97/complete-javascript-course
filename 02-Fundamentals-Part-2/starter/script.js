@@ -253,7 +253,20 @@
 
 // Introduction to Objects
 
-// object literal syntax below
+// // object literal syntax below
+// const jonas = {
+//     firstName: 'Jonas',
+//     lastName: 'Schmedtmann',
+//     age: 2021 - 1991,
+//     job: 'teacher',
+//     friends: ['Michael', 'Peter', 'Steven']
+// }
+
+
+
+
+
+// Dot vs Bracket Notation
 const jonas = {
     firstName: 'Jonas',
     lastName: 'Schmedtmann',
@@ -261,3 +274,37 @@ const jonas = {
     job: 'teacher',
     friends: ['Michael', 'Peter', 'Steven']
 }
+console.log(jonas);
+
+// Dot notation below
+console.log(jonas.lastName);
+
+// Bracket Notation Below
+const nameKey = 'Name';
+console.log(jonas['lastName']);
+console.log(jonas['first' + nameKey]);
+console.log(jonas['last' + nameKey]);
+
+
+
+const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends');
+// Say we enter "job" into our prompt, then the value of interestedIn becomes 'job' so we can get access to data below, because interestedIn === job
+console.log(jonas[interestedIn]);
+
+if (jonas[interestedIn]){
+    console.log(jonas[interestedIn]);
+} else {
+    console.log(`Wrong request!`)
+}
+
+
+// Using dot notation to add new properties
+jonas.location = 'Portugal';
+
+// Using bracket notation to add new properties
+jonas['twitter'] = '@jonasSchmedtman';
+console.log(jonas);
+
+
+// Mini Challenge
+console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`);
