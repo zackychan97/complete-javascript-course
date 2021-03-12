@@ -210,37 +210,54 @@
 
 
 
-// Basic Array Operations (Methods)
+// // Basic Array Operations (Methods)
 
-// Add to end of array
-const friends = ['Michael', 'Steven', 'Peter'];
-friends.push("Jay");
-console.log(friends);
-const newLength = friends.push("Dion"); // will store the length of new array
-console.log(newLength);
+// // Add to end of array
+// const friends = ['Michael', 'Steven', 'Peter'];
+// friends.push("Jay");
+// console.log(friends);
+// const newLength = friends.push("Dion"); // will store the length of new array
+// console.log(newLength);
 
-// Add to beginning of array
-friends.unshift('John');
-console.log(friends);
+// // Add to beginning of array
+// friends.unshift('John');
+// console.log(friends);
 
-// Remove from the end of an array
-friends.pop(); // no arguments into function, just deletes last element of array
-console.log(friends);
-const popped = friends.pop();
-console.log(popped);
-console.log(friends);
+// // Remove from the end of an array
+// friends.pop(); // no arguments into function, just deletes last element of array
+// console.log(friends);
+// const popped = friends.pop();
+// console.log(popped);
+// console.log(friends);
 
-// Remove from the beginning of an array
-friends.shift();
-console.log(friends);
-const shifted = friends.shift();
-console.log(shifted);
-console.log(friends);
-
-
-// Finding a specific index by Specific search
-console.log(friends.indexOf('Steven')); // tells us the index number of 'Steven' in our friends array
+// // Remove from the beginning of an array
+// friends.shift();
+// console.log(friends);
+// const shifted = friends.shift();
+// console.log(shifted);
+// console.log(friends);
 
 
-// Seeing if a value/element is found anywhere at all in an array
-console.log(friends.includes('Steven'));
+// // Finding a specific index by Specific search
+// console.log(friends.indexOf('Steven')); // tells us the index number of 'Steven' in our friends array
+
+
+// // Seeing if a value/element is found anywhere at all in an array
+// console.log(friends.includes('Steven'));
+
+
+
+
+
+
+
+// Introduction to Objects
+
+// object literal syntax below
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2021 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+}
