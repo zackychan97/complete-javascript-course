@@ -267,44 +267,83 @@
 
 
 // Dot vs Bracket Notation
+// const jonas = {
+//     firstName: 'Jonas',
+//     lastName: 'Schmedtmann',
+//     age: 2021 - 1991,
+//     job: 'teacher',
+//     friends: ['Michael', 'Peter', 'Steven']
+// }
+// console.log(jonas);
+
+// // Dot notation below
+// console.log(jonas.lastName);
+
+// // Bracket Notation Below
+// const nameKey = 'Name';
+// console.log(jonas['lastName']);
+// console.log(jonas['first' + nameKey]);
+// console.log(jonas['last' + nameKey]);
+
+
+
+// const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends');
+// // Say we enter "job" into our prompt, then the value of interestedIn becomes 'job' so we can get access to data below, because interestedIn === job
+// console.log(jonas[interestedIn]);
+
+// if (jonas[interestedIn]){
+//     console.log(jonas[interestedIn]);
+// } else {
+//     console.log(`Wrong request!`)
+// }
+
+
+// // Using dot notation to add new properties
+// jonas.location = 'Portugal';
+
+// // Using bracket notation to add new properties
+// jonas['twitter'] = '@jonasSchmedtman';
+// console.log(jonas);
+
+
+// // Mini Challenge
+// console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`);
+
+
+
+
+
+
+
+
+// Object Methods
+
 const jonas = {
     firstName: 'Jonas',
     lastName: 'Schmedtmann',
-    age: 2021 - 1991,
+    birthYear: 1991,
     job: 'teacher',
-    friends: ['Michael', 'Peter', 'Steven']
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+    
+    calcAge: function(){
+        console.log(this);
+        this.age = 2021 - this.birthYear;
+        return this.age;
+    },
+
+    getSummary: function() {
+            return `${this.firstName} is a ${this.calcAge()} year old ${this.job}, and he has a ${this.hasDriversLicense ? 'a' : 'no'} driver's license`      
+    }
 }
-console.log(jonas);
+// console.log(jonas);
+// need to calcAge ONCE before we can access jonas.age()
+jonas.calcAge();
 
-// Dot notation below
-console.log(jonas.lastName);
-
-// Bracket Notation Below
-const nameKey = 'Name';
-console.log(jonas['lastName']);
-console.log(jonas['first' + nameKey]);
-console.log(jonas['last' + nameKey]);
+console.log(jonas.age);
+console.log(jonas['age']);
 
 
-
-const interestedIn = prompt('What do you want to know about Jonas? Choose between firstName, lastName, age, job, and friends');
-// Say we enter "job" into our prompt, then the value of interestedIn becomes 'job' so we can get access to data below, because interestedIn === job
-console.log(jonas[interestedIn]);
-
-if (jonas[interestedIn]){
-    console.log(jonas[interestedIn]);
-} else {
-    console.log(`Wrong request!`)
-}
-
-
-// Using dot notation to add new properties
-jonas.location = 'Portugal';
-
-// Using bracket notation to add new properties
-jonas['twitter'] = '@jonasSchmedtman';
-console.log(jonas);
-
-
-// Mini Challenge
-console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`);
+// Challenge
+// "Jonas is a 46 year old teacher, and he has a/no drivers license"
+console.log(jonas.getSummary());
