@@ -1,6 +1,8 @@
 // Activating Strict Mode
 // 'use strict';
 
+// const { type } = require("os");
+
 // let hasDriversLicense = false;
 // const passTest = true;
 
@@ -316,34 +318,109 @@
 
 
 
-// Object Methods
+// // Object Methods
 
-const jonas = {
-    firstName: 'Jonas',
-    lastName: 'Schmedtmann',
-    birthYear: 1991,
-    job: 'teacher',
-    friends: ['Michael', 'Peter', 'Steven'],
-    hasDriversLicense: true,
+// const jonas = {
+//     firstName: 'Jonas',
+//     lastName: 'Schmedtmann',
+//     birthYear: 1991,
+//     job: 'teacher',
+//     friends: ['Michael', 'Peter', 'Steven'],
+//     hasDriversLicense: true,
     
-    calcAge: function(){
-        console.log(this);
-        this.age = 2021 - this.birthYear;
-        return this.age;
-    },
+//     calcAge: function(){
+//         console.log(this);
+//         this.age = 2021 - this.birthYear;
+//         return this.age;
+//     },
 
-    getSummary: function() {
-            return `${this.firstName} is a ${this.calcAge()} year old ${this.job}, and he has a ${this.hasDriversLicense ? 'a' : 'no'} driver's license`      
-    }
+//     getSummary: function() {
+//             return `${this.firstName} is a ${this.calcAge()} year old ${this.job}, and he has a ${this.hasDriversLicense ? 'a' : 'no'} driver's license`      
+//     }
+// }
+// // console.log(jonas);
+// // need to calcAge ONCE before we can access jonas.age()
+// jonas.calcAge();
+
+// console.log(jonas.age);
+// console.log(jonas['age']);
+
+
+// // Challenge
+// // "Jonas is a 46 year old teacher, and he has a/no drivers license"
+// console.log(jonas.getSummary());
+
+
+
+
+
+
+
+
+
+// Iteration: the for loop
+
+// console.log(`Lifting weights repetition 1 🏋️‍♂️`);
+// console.log(`Lifting weights repetition 2 🏋️‍♂️`);
+// console.log(`Lifting weights repetition 3 🏋️‍♂️`);
+
+for(let rep = 1; rep <= 10; rep++){
+    console.log(`Lifting weights repetition ${rep}`);
 }
-// console.log(jonas);
-// need to calcAge ONCE before we can access jonas.age()
-jonas.calcAge();
-
-console.log(jonas.age);
-console.log(jonas['age']);
 
 
-// Challenge
-// "Jonas is a 46 year old teacher, and he has a/no drivers license"
-console.log(jonas.getSummary());
+
+
+
+
+
+// Looping arrays, breaking, and continuing
+
+// Looping over an array
+const jonasArray = [
+    'Jonas',
+    'Schmedtmann',
+    2021 - 1991,
+    'teacher',
+    ['Michael', 'Peter', 'Steven']
+];
+
+for(let i = 0; i < jonasArray.length; i++){
+    console.log(jonasArray[i], typeof jonasArray[i]);
+}
+
+
+
+
+// creating a new array based on values from another array, in practice.
+const types = []; // 1) create an empty array
+for(let i = 0; i < jonasArray.length; i ++){ // 2) set up for loop to run only for the length of the array we wish to get the data FROM 
+    types.push(typeof jonasArray[i]); // 3) put the data into the new array
+}
+
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++){
+    ages.push(2021 - years[i]);
+}
+console.log(ages);
+
+// continue and break
+// only log strings to console. Will continue if a string. otherwise will start next loop until condition is met
+console.log(`---ONLY STRINGS---`)
+for (let i = 0; i < jonasArray.length; i++){
+    if(typeof jonasArray[i] !== 'string') continue;
+
+    console.log(jonasArray[i], typeof jonasArray[i]);
+}
+
+// Break once we see a number data type
+console.log(`---BREAK AT FIRST SIGHT OF TYPE NUMBER--`)
+for (let i = 0; i < jonasArray.length; i++){
+    if(typeof jonasArray[i] === 'number') break;
+
+    console.log(jonasArray[i], typeof jonasArray[i]);
+}
