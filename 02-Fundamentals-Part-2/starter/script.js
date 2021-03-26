@@ -364,9 +364,9 @@
 // console.log(`Lifting weights repetition 2 🏋️‍♂️`);
 // console.log(`Lifting weights repetition 3 🏋️‍♂️`);
 
-for(let rep = 1; rep <= 10; rep++){
-    console.log(`Lifting weights repetition ${rep}`);
-}
+// for(let rep = 1; rep <= 10; rep++){
+//     console.log(`Lifting weights repetition ${rep}`);
+// }
 
 
 
@@ -374,9 +374,64 @@ for(let rep = 1; rep <= 10; rep++){
 
 
 
-// Looping arrays, breaking, and continuing
+// // Looping arrays, breaking, and continuing
 
-// Looping over an array
+// // Looping over an array
+// const jonasArray = [
+//     'Jonas',
+//     'Schmedtmann',
+//     2021 - 1991,
+//     'teacher',
+//     ['Michael', 'Peter', 'Steven']
+// ];
+
+// for(let i = 0; i < jonasArray.length; i++){
+//     console.log(jonasArray[i], typeof jonasArray[i]);
+// }
+
+
+
+
+// // creating a new array based on values from another array, in practice.
+// const types = []; // 1) create an empty array
+// for(let i = 0; i < jonasArray.length; i ++){ // 2) set up for loop to run only for the length of the array we wish to get the data FROM 
+//     types.push(typeof jonasArray[i]); // 3) put the data into the new array
+// }
+
+// console.log(types);
+
+// const years = [1991, 2007, 1969, 2020];
+// const ages = [];
+
+// for (let i = 0; i < years.length; i++){
+//     ages.push(2021 - years[i]);
+// }
+// console.log(ages);
+
+// // continue and break
+// // only log strings to console. Will continue if a string. otherwise will start next loop until condition is met
+// console.log(`---ONLY STRINGS---`)
+// for (let i = 0; i < jonasArray.length; i++){
+//     if(typeof jonasArray[i] !== 'string') continue;
+
+//     console.log(jonasArray[i], typeof jonasArray[i]);
+// }
+
+// // Break once we see a number data type
+// console.log(`---BREAK AT FIRST SIGHT OF TYPE NUMBER--`)
+// for (let i = 0; i < jonasArray.length; i++){
+//     if(typeof jonasArray[i] === 'number') break;
+
+//     console.log(jonasArray[i], typeof jonasArray[i]);
+// }
+
+
+
+
+
+
+
+// Looping Backwards and Loops in Loops
 const jonasArray = [
     'Jonas',
     'Schmedtmann',
@@ -385,42 +440,18 @@ const jonasArray = [
     ['Michael', 'Peter', 'Steven']
 ];
 
-for(let i = 0; i < jonasArray.length; i++){
-    console.log(jonasArray[i], typeof jonasArray[i]);
+// looping backwards
+for( let i = jonasArray.length - 1; i >= 0; i--){
+    console.log(jonasArray[i]);
 }
 
 
 
+// loop inside a loop
+for (let exercise = 1; exercise < 4; exercise++){
+    console.log(`---Starting exercise ${exercise}---`);
 
-// creating a new array based on values from another array, in practice.
-const types = []; // 1) create an empty array
-for(let i = 0; i < jonasArray.length; i ++){ // 2) set up for loop to run only for the length of the array we wish to get the data FROM 
-    types.push(typeof jonasArray[i]); // 3) put the data into the new array
-}
-
-console.log(types);
-
-const years = [1991, 2007, 1969, 2020];
-const ages = [];
-
-for (let i = 0; i < years.length; i++){
-    ages.push(2021 - years[i]);
-}
-console.log(ages);
-
-// continue and break
-// only log strings to console. Will continue if a string. otherwise will start next loop until condition is met
-console.log(`---ONLY STRINGS---`)
-for (let i = 0; i < jonasArray.length; i++){
-    if(typeof jonasArray[i] !== 'string') continue;
-
-    console.log(jonasArray[i], typeof jonasArray[i]);
-}
-
-// Break once we see a number data type
-console.log(`---BREAK AT FIRST SIGHT OF TYPE NUMBER--`)
-for (let i = 0; i < jonasArray.length; i++){
-    if(typeof jonasArray[i] === 'number') break;
-
-    console.log(jonasArray[i], typeof jonasArray[i]);
+    for (let rep = 1; rep < 6; rep++){
+        console.log(`Lifting weight repetition ${rep}`);
+    }
 }
