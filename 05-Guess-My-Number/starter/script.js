@@ -8,7 +8,7 @@ const secretNumber = Math.trunc(Math.random() * 20) + 1;
 // Score tracker defined in global scope
 let score = 20;
 
-// An event listener (click) that contains our control flow for handling our guesses inside of it.
+// An event listener (click) that contains our control flow for handling our guesses inside of it.  
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
