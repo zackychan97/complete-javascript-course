@@ -1,4 +1,5 @@
 'use strict';
+// Committing to new branch...
 
 // Define our "secret number". We are defining it in Global Scope.
 // The value of number is between 1 and 20.
