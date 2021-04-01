@@ -9,6 +9,9 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 // Score tracker defined in global scope
 let score = 20;
 
+// High Score tracker defined in global scope
+let highScore = 0;
+
 // An event listener (click) that contains our control flow for handling our guesses inside of it.
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
@@ -20,8 +23,13 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.message').textContent = '🎉 Correct Number!';
     document.querySelector('.number').textContent = secretNumber;
     document.querySelector('body').style.backgroundColor = '#60b347';
-
     document.querySelector('.number').style.width = '30rem';
+
+    // Updating High Score if highscore > current high score, only updating WHEN/IF we win
+    if (score > highScore){
+      highScore = score;
+      document.querySelector('.highscore').textContent = highScore;
+    }
   } else if (guess > secretNumber) {
     if (score > 1) {
       document.querySelector('.message').textContent = '📈 Too High!';
