@@ -22,18 +22,21 @@ const displayScore = function (message) {
   document.querySelector('.score').textContent = message;
 };
 
+// Function that will use query selector to change textContent of our current state of the Number, which the user is trying to guess
+const displayNumber = function (message) {
+  document.querySelector('.number').textContent = message;
+};
+
 // An event listener (click) that contains our control flow for handling our guesses inside of it.
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
   // Control Flow for handling our guesses below
   if (!guess) {
-    // document.querySelector('.message').textContent = '⛔️  No Number!';
     displayMessage('⛔️  No Number!');
   } else if (guess === secretNumber) {
-    // document.querySelector('.message').textContent = '🎉 Correct Number!';
     displayMessage('🎉 Correct Number!');
-    document.querySelector('.number').textContent = secretNumber;
+    displayNumber(secretNumber);
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
 
@@ -48,7 +51,7 @@ document.querySelector('.check').addEventListener('click', function () {
       score--;
       displayScore(score);
     } else {
-      document.querySelector('.message').textContent = '💥 You lost the game!';
+      displayMessage('💥 You lost the game!');
       displayScore(0);
       document.querySelector('body').style.backgroundColor = '#FF0000';
     }
@@ -58,8 +61,8 @@ document.querySelector('.check').addEventListener('click', function () {
 document.querySelector('.again').addEventListener('click', function () {
   score = 20;
   displayScore(score);
-  document.querySelector('.message').textContent = 'Start guessing...';
-  document.querySelector('.number').textContent = '?';
+  displayMessage('Start guessing...');
+  displayNumber('?');
   document.querySelector('body').style.backgroundColor = '#222';
   document.querySelector('.number').style.width = '15rem';
   secretNumber = Math.trunc(Math.random() * 20) + 1;
