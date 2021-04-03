@@ -24,3 +24,12 @@ for (let i = 0; i < btnsOpenModal.length; i++) {
 btnCloseModal.addEventListener('click', closeModal);
 
 overlay.addEventListener('click', closeModal);
+
+// JS will pass in an "event" object descibing/containing the data about the particular keydown
+// IF the user hits escape and our modal does not contain the class name hidden, we will call our closeModal function
+document.addEventListener('keydown', function (event) {
+  console.log(event.key);
+  if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+    closeModal();
+  }
+});
