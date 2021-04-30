@@ -41,17 +41,54 @@
 // let job = 'teacher';
 // const year = 1991;
 
-// Functions
-console.log(addFuncDecl(2, 3)); // We can call the function declaration before it is defined
-console.log(addFuncExpr(9, 9)); // Since we are using const, this function is not hoisted. We will not have a reference to the function. If we used var, it would be hoisted, but set to undefined, therefor also unusable.
-console.log(addFuncArrow(10, 10)); // Since we are using const, this function is not hoisted. We will not have a reference to the function. If we used var, it would be hoisted, but set to undefined, therefor also unusable.
+// // Functions
+// console.log(addFuncDecl(2, 3)); // We can call the function declaration before it is defined
+// console.log(addFuncExpr(9, 9)); // Since we are using const, this function is not hoisted. We will not have a reference to the function. If we used var, it would be hoisted, but set to undefined, therefor also unusable.
+// console.log(addFuncArrow(10, 10)); // Since we are using const, this function is not hoisted. We will not have a reference to the function. If we used var, it would be hoisted, but set to undefined, therefor also unusable.
 
-function addFuncDecl(a, b) {
-  return a + b;
-}
+// function addFuncDecl(a, b) {
+//   return a + b;
+// }
 
-const addFuncExpr = function (a, b) {
-  return a + b;
+// const addFuncExpr = function (a, b) {
+//   return a + b;
+// };
+
+// const addFuncArrow = (a, b) => a + b;
+
+// // The this Keyword in Practice
+console.log(this); // Will be the window object
+
+const calcAge = function (birthYear) {
+  console.log(2021 - birthYear);
+  console.log(this); // Will be undefined (since we are in strict mode. If not in strict mode, it would also be the window object)
 };
 
-const addFuncArrow = (a, b) => a + b;
+calcAge(1990);
+
+const calcAgeArrow = birthYear => {
+  console.log(2021 - birthYear);
+  console.log(this); // Will be the window object. The arrow function DOES NOT get its own this keyword, so it uses the THIS values of its parent. And in this case, the parent is the global scope
+};
+calcAgeArrow(1980);
+
+const jonas = {
+  birthYear: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2021 - this.birthYear);
+  },
+};
+jonas.calcAge(); // since jonas is the object calling calcAge, jonas will provide the THIS values to the calcAge function
+
+const matilda = {
+  birthYear: 2017,
+};
+
+matilda.calcage = jonas.calcAge; // method borrowing so we don't have to rewrite
+console.log(matilda);
+
+// matilda.calcAge(); // since matilda is now the object calling calcAge, matilda will provide the THIS values to the calcAge function
+
+// const f = jonas.calcAge;
+// f();
