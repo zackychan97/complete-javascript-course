@@ -57,38 +57,75 @@
 // const addFuncArrow = (a, b) => a + b;
 
 // // The this Keyword in Practice
-console.log(this); // Will be the window object
+// console.log(this); // Will be the window object
 
-const calcAge = function (birthYear) {
-  console.log(2021 - birthYear);
-  console.log(this); // Will be undefined (since we are in strict mode. If not in strict mode, it would also be the window object)
-};
+// const calcAge = function (birthYear) {
+//   console.log(2021 - birthYear);
+//   console.log(this); // Will be undefined (since we are in strict mode. If not in strict mode, it would also be the window object)
+// };
 
-calcAge(1990);
+// calcAge(1990);
 
-const calcAgeArrow = birthYear => {
-  console.log(2021 - birthYear);
-  console.log(this); // Will be the window object. The arrow function DOES NOT get its own this keyword, so it uses the THIS values of its parent. And in this case, the parent is the global scope
-};
-calcAgeArrow(1980);
+// const calcAgeArrow = birthYear => {
+//   console.log(2021 - birthYear);
+//   console.log(this); // Will be the window object. The arrow function DOES NOT get its own this keyword, so it uses the THIS values of its parent. And in this case, the parent is the global scope
+// };
+// calcAgeArrow(1980);
 
-const jonas = {
-  birthYear: 1991,
-  calcAge: function () {
-    console.log(this);
-    console.log(2021 - this.birthYear);
-  },
-};
-jonas.calcAge(); // since jonas is the object calling calcAge, jonas will provide the THIS values to the calcAge function
+// const jonas = {
+//   birthYear: 1991,
+//   calcAge: function () {
+//     console.log(this);
+//     console.log(2021 - this.birthYear);
+//   },
+// };
+// jonas.calcAge(); // since jonas is the object calling calcAge, jonas will provide the THIS values to the calcAge function
 
-const matilda = {
-  birthYear: 2017,
-};
+// const matilda = {
+//   birthYear: 2017,
+// };
 
-matilda.calcage = jonas.calcAge; // method borrowing so we don't have to rewrite
-console.log(matilda);
+// matilda.calcage = jonas.calcAge; // method borrowing so we don't have to rewrite
+// console.log(matilda);
 
 // matilda.calcAge(); // since matilda is now the object calling calcAge, matilda will provide the THIS values to the calcAge function
 
 // const f = jonas.calcAge;
 // f();
+
+// Regular Functions vs Arrow Functions
+const jonas = {
+  firstName: 'Jonas',
+  year: 1991,
+  calcAge: function () {
+    // Solution 1 (Pre ES6)
+    // const self = this;
+    // const isMillenial = function () {
+    //   console.log(self);
+    //   console.log(self.year >= 1981 && self.year <= 1996);
+    // };
+    const isMillenial = () => {
+      console.log(this);
+      console.log(this.year >= 1981 && this.year <= 1996);
+    };
+    isMillenial();
+  },
+  greet: () => console.log(`Hey ${this.firstName}`),
+};
+
+jonas.greet(); // will return undefined, bc greet is an arrow function and thus doesn't have "this". if we declare firstName as a var in the global scope, it will look at that. Which is obviously dangerous. Don't do that!!!
+jonas.calcAge();
+
+// Argument Key Word
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+addExpr(2, 5);
+addExpr(2, 5, 10, 30);
+
+var addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+addArrow(2, 3); // returns undefined bc there is no lexical arguments keyword for addArrow to look at since it is an arrow function.
