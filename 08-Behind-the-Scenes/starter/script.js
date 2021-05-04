@@ -93,39 +93,76 @@
 // const f = jonas.calcAge;
 // f();
 
-// Regular Functions vs Arrow Functions
-const jonas = {
-  firstName: 'Jonas',
-  year: 1991,
-  calcAge: function () {
-    // Solution 1 (Pre ES6)
-    // const self = this;
-    // const isMillenial = function () {
-    //   console.log(self);
-    //   console.log(self.year >= 1981 && self.year <= 1996);
-    // };
-    const isMillenial = () => {
-      console.log(this);
-      console.log(this.year >= 1981 && this.year <= 1996);
-    };
-    isMillenial();
-  },
-  greet: () => console.log(`Hey ${this.firstName}`),
+// // Regular Functions vs Arrow Functions
+// const jonas = {
+//   firstName: 'Jonas',
+//   year: 1991,
+//   calcAge: function () {
+//     // Solution 1 (Pre ES6)
+//     // const self = this;
+//     // const isMillenial = function () {
+//     //   console.log(self);
+//     //   console.log(self.year >= 1981 && self.year <= 1996);
+//     // };
+//     const isMillenial = () => {
+//       console.log(this);
+//       console.log(this.year >= 1981 && this.year <= 1996);
+//     };
+//     isMillenial();
+//   },
+//   greet: () => console.log(`Hey ${this.firstName}`),
+// };
+
+// jonas.greet(); // will return undefined, bc greet is an arrow function and thus doesn't have "this". if we declare firstName as a var in the global scope, it will look at that. Which is obviously dangerous. Don't do that!!!
+// jonas.calcAge();
+
+// // Argument Key Word
+// const addExpr = function (a, b) {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addExpr(2, 5);
+// addExpr(2, 5, 10, 30);
+
+// var addArrow = (a, b) => {
+//   console.log(arguments);
+//   return a + b;
+// };
+// addArrow(2, 3); // returns undefined bc there is no lexical arguments keyword for addArrow to look at since it is an arrow function.
+
+//
+//
+//
+//
+// Primitives vs Objects in Practice
+// Primitive Types
+let lastName = 'Williams';
+let oldLastName = lastName;
+lastName = 'Davis';
+console.log(lastName, oldLastName); // will be Davis and Williams because each primitive value is saved into its own piece of memory in the call stack. oldLastName is looking at lastNames first stored memory. Davis is looking at a different memory cell
+
+// Reference types
+const jessica = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+};
+const marriedJessica = jessica;
+marriedJessica.lastName = 'Davis';
+console.log('Before marriage: ', jessica);
+console.log('After marriage: ', marriedJessica); // both will be Davis because this didn't create a new object in the heap, its just a new variable in the call stack that points to the same memory address in the heap. So, if we change a property on marriedJessica, it will change it on jessica object as well
+
+// Copying objects
+
+const jessica2 = {
+  firstName: 'Jessica',
+  lastName: 'Williams',
+  age: 27,
+  family: ['Milo', 'Diesel'],
 };
 
-jonas.greet(); // will return undefined, bc greet is an arrow function and thus doesn't have "this". if we declare firstName as a var in the global scope, it will look at that. Which is obviously dangerous. Don't do that!!!
-jonas.calcAge();
-
-// Argument Key Word
-const addExpr = function (a, b) {
-  console.log(arguments);
-  return a + b;
-};
-addExpr(2, 5);
-addExpr(2, 5, 10, 30);
-
-var addArrow = (a, b) => {
-  console.log(arguments);
-  return a + b;
-};
-addArrow(2, 3); // returns undefined bc there is no lexical arguments keyword for addArrow to look at since it is an arrow function.
+const jessicaCopy = Object.assign({}, jessica2); // will merge an empty object and jessica2 object. So basically a way of copying an object
+jessicaCopy.lastName = 'Davis';
+jessicaCopy.family.push('Test');
+console.log('Before marriage: ', jessica2);
+console.log('After marriage: ', jessicaCopy);
